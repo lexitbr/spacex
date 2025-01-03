@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+O projeto SpaceX Rockets é uma aplicação web desenvolvida com Next.js 14 que oferece informações detalhadas sobre os principais foguetes da SpaceX. Utilizando renderização completa do lado do servidor (SSR), a aplicação garante desempenho otimizado e uma experiência de usuário aprimorada.
 
-## Getting Started
+Funcionalidades
+• Lista de Foguetes: Apresenta uma lista dos principais foguetes da SpaceX, incluindo Falcon 1, Falcon 9, Falcon Heavy e Starship.
+• Detalhes dos Foguetes: Ao selecionar um foguete, o usuário pode visualizar informações detalhadas, fotos e curiosidades sobre o modelo escolhido.
 
-First, run the development server:
+Tecnologias Utilizadas
+• Next.js 14: Framework React para desenvolvimento web com renderização do lado do servidor.
+• Radix UI: Biblioteca de componentes acessíveis e estilizados para React.
 
-```bash
+Como Executar o Projeto 1. Clone o repositório:
+
+git clone https://github.com/seu-usuario/spacex-rockets.git
+cd spacex-rockets
+
+    2.	Instale as dependências:
+
+npm install
+
+    3.	Inicie o servidor de desenvolvimento:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    4.	Acesse a aplicação:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Abra o navegador e navegue até http://localhost:3000 para visualizar a aplicação em funcionamento.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Contribuição
 
-## Learn More
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para melhorias e correções.
 
-To learn more about Next.js, take a look at the following resources:
+Licença
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este projeto está licenciado sob a MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Desenvolvido por Filipe Camargo.
