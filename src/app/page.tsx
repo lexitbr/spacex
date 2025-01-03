@@ -46,7 +46,7 @@ export default async function Home() {
           Um teste de NextJS 14 com full SSR.
         </Text>
 
-        <Ulink href="https://github.com" target="_blank">
+        <Ulink href="https://github.com/lexitbr/spacex" target="_blank">
           <Button variant="outline" color="violet">
             <BsGithub /> View on Github
           </Button>
