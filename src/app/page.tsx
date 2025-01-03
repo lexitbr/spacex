@@ -1,95 +1,67 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import RocketItemBox from "@/components/rocket.component";
+import { getRockets } from "@/services/rocket.service";
+import { Rocket } from "@/types/rocket.type";
+import {
+  Text,
+  Container,
+  Grid,
+  Heading,
+  Code,
+  Flex,
+  Link as Ulink,
+  Button,
+} from "@radix-ui/themes";
+import { TbBrandNextjs, TbBrandNodejs } from "react-icons/tb";
+import { BsGithub } from "react-icons/bs";
 
-export default function Home() {
+export default async function Home() {
+  const rockets = await getRockets();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+    <>
+      <Heading align="center" as="h1" color="violet">
+        SpaceX Rockets
+      </Heading>
+      <Text size="1" align="center" as="p" mt="2" mb="7" color="gray">
+        Clique em um foguete para ver mais detalhes, fotos e curiosidades.
+      </Text>
+
+      <Grid columns={{ xs: "9", md: "2" }} gap="5">
+        {rockets.map((rocket: Rocket, index: number) => (
+          <RocketItemBox key={index} rocket={rocket} />
+        ))}
+      </Grid>
+
+      <Flex align="center" justify="center" mt="9" direction="column" gap="2">
+        <Text size="1" color="gray">
+          Desenvolvido por{" "}
+          <Ulink
+            href="https://www.linkedin.com/in/filipecamargo10/"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+            Filipe Camargo.
+          </Ulink>
+        </Text>
+        <Text size="1" color="gray" ml="2">
+          Um teste de NextJS 14 com full SSR.
+        </Text>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <Ulink href="https://github.com" target="_blank">
+          <Button variant="outline" color="violet">
+            <BsGithub /> View on Github
+          </Button>
+        </Ulink>
+      </Flex>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Flex
+        justify="center"
+        align="center"
+        style={{ fontSize: "40px" }}
+        mt="4"
+        gap="4"
+      >
+        <TbBrandNextjs color="gray" /> <TbBrandNodejs color="gray" />
+      </Flex>
+    </>
   );
 }
